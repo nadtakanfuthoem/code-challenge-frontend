@@ -1,0 +1,26 @@
+<div class="container text-center">
+  <h1>{{title}}</h1>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="search-json">
+			<input class="form-control" type="text" name="search" [(ngModel)]="searchText"
+			placeholder="Start searching for a data by name or specialty"
+			>
+		</div>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Specialty</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let item of data$ | filter:searchText">
+					<td>{{ item.name }}</td>
+					<td>{{ item.specialty }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
